@@ -1,0 +1,142 @@
+body {
+    background-image: url('img/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.font-inter {
+    font-family: 'Inter', sans-serif;
+}
+
+.item {
+    width: 20rem;
+    height: 25rem;
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.item .title {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.item:hover .title {
+    opacity: 1;
+}
+
+.item:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+.item-desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5rem 0.75rem;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transform: translateY(calc(100% - 3.375rem));
+    transition: all 0.4s ease-in-out;
+}
+
+.item:hover .item-desc {
+    transform: translateY(0);
+}
+
+.item-desc p {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: all 0.4s ease-in-out 0.2s;
+}
+
+.item:hover .item-desc p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .item {
+        width: 15rem;
+        height: 20rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        width: 10rem;
+        height: 15rem;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .w-1/2 img {
+    object-fit: cover;
+    margin: auto;
+}
+
+    .w-1/2 {
+    order: -1;
+}
+
+    .flex.items-start.justify-center.h-screen {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .animate-typewriter {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+@keyframes typewriter {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+.animate-typewriter {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typewriter 2s steps(44) 1s 1 normal both; /* Réduire la durée à 2 secondes */
+}
+
+.animate-typewriter:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.animate-typewriter:nth-child(2) {
+    animation-delay: 2s; /* Ajuster les délais si nécessaire */
+}
+
+.animate-typewriter:nth-child(3) {
+    animation-delay: 4s; /* Ajuster les délais si nécessaire */
+}
+
+
+.mr-10 {
+    margin-right: 10px; /* Ajustez cette valeur en fonction de l'espace que vous souhaitez */
+}
+
+
